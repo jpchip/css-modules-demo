@@ -1,7 +1,7 @@
 {
   "name": "css-modules-demo",
-  "version": "1.0.0",
-  "description": "Describe css-modules-demo here",
+  "version": "0.0.1",
+  "description": "css-modules-demo",
   "private": true,
   "scripts": {
     "build": "nwb build",
@@ -11,6 +11,7 @@
     "test:watch": "nwb test --server"
   },
   "dependencies": {
+    "normalize.css": "^3.0.3",
     "react": "0.14.x",
     "react-dom": "0.14.x"
   },
@@ -18,7 +19,10 @@
     "css-loader": "^0.23.1",
     "nwb": "0.8.x"
   },
-  "author": "",
+  "author": "Jared Chapiewsky",
   "license": "MIT",
-  "repository": ""
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jpchip/css-modules-demo.git"
+  }
 }

@@ -1,0 +1,8 @@
+.footer {
+	composes: a-position-absolute from "../styles/layout.css";
+	bottom: 0;
+}
+
+.copyright {
+	composes: a-text-size-smallest from "../styles/typography.css";
+}
