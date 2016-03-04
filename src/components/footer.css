@@ -1,4 +1,4 @@
-.footer {
+.box {
 	composes: a-position-absolute from "../styles/layout.css";
 	bottom: 0;
 }
