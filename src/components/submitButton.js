@@ -3,45 +3,56 @@ import styles from './submitButton.css';
 import React, { Component } from 'react';
 
 export default class SubmitButton extends Component {
-	
+
 	constructor(props) {
 		super(props);
+
+		//use default styles if not given in props
+		if(props.styles) {
+			for(var style in styles) {
+				if(!props.styles.hasOwnProperty(style)) {
+					props.styles[style] = styles[style];
+				}
+			}
+		}
 		this.state = {status: props.initialStatus};
 	}
-	
+
 	handleClick() {
 		let self = this;
 		if(this.state.status === 'disabled') {
 			return;
 		}
-		
+
 		this.setState({status: 'progress'});
 		timeoutID = window.setTimeout(function() {
 			self.setState({status: 'normal'});
 		}, 2000);
 	}
 
-  render() {
-	let className, label = 'Submit';
-	if (this.state.status === 'progress') {
-      className = styles.inProgress;
-      label = "Processing..."
-    } else if (this.state.status === 'error') {
-      className = styles.error;
-    } else if (this.state.status === 'disabled') {
-      className = styles.disabled;
-    } else {
-      className = styles.normal;
-    }
-	  
-    return (
-      <button className={className} type='submit' onClick={this.handleClick.bind(this)} >{label}</button>
-    );
-  }
+	render() {
+		console.log(this.props);
+		let className, label = 'Submit';
+		if (this.state.status === 'progress') {
+			className = this.props.styles.inProgress;
+			label = "Processing..."
+		} else if (this.state.status === 'error') {
+			className = this.props.styles.error;
+		} else if (this.state.status === 'disabled') {
+			className = this.props.styles.disabled;
+		} else {
+			className = this.props.styles.normal;
+		}
+
+		return (
+			<button className={className} type='submit' onClick={this.handleClick.bind(this)} >{label}</button>
+		);
+	}
 
 };
 
 SubmitButton.propTypes = {
-	status : React.PropTypes.string
+	initialStatus : React.PropTypes.string,
+	styles : React.PropTypes.object
 }
-SubmitButton.defaultProps = { status: 'normal' };
+SubmitButton.defaultProps = { styles: styles, initialStatus: 'normal' };

@@ -8,3 +8,7 @@
 .title {
 	composes: a-text-color-trimble-blue from "./styles/colors.css";
 }
+
+.content {
+	composes: a-text-color-trimble-blue from "./styles/layout.css";
+}
