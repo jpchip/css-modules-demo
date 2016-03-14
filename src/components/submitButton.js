@@ -10,8 +10,10 @@ export default class SubmitButton extends Component {
 		//use default styles if not given in props
 		if(props.styles) {
 			for(var style in styles) {
-				if(!props.styles.hasOwnProperty(style)) {
-					props.styles[style] = styles[style];
+				if(styles.hasOwnProperty(style)) {
+					if(!props.styles.hasOwnProperty(style)) {
+						props.styles[style] = styles[style];
+					}
 				}
 			}
 		}
@@ -25,13 +27,12 @@ export default class SubmitButton extends Component {
 		}
 
 		this.setState({status: 'progress'});
-		timeoutID = window.setTimeout(function() {
+		var timeoutID = window.setTimeout(function() {
 			self.setState({status: 'normal'});
 		}, 2000);
 	}
 
 	render() {
-		console.log(this.props);
 		let className, label = 'Submit';
 		if (this.state.status === 'progress') {
 			className = this.props.styles.inProgress;
@@ -54,5 +55,5 @@ export default class SubmitButton extends Component {
 SubmitButton.propTypes = {
 	initialStatus : React.PropTypes.string,
 	styles : React.PropTypes.object
-}
+};
 SubmitButton.defaultProps = { styles: styles, initialStatus: 'normal' };
