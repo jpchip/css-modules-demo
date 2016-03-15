@@ -1,14 +1,9 @@
 .app {
-	composes: a-font-family from "./styles/typography.css";
-	text-size-adjust: none;
-	line-height: 200%;
-	padding: 6px 0px 0px 10px;
+    composes: a-font-family from "./styles/typography.css";
+    composes: a-text-color from "./styles/colors.css";
+    padding: 6px 0 0 10px;
 }
 
 .title {
-	composes: a-text-color-trimble-blue from "./styles/colors.css";
-}
-
-.content {
-	composes: a-text-color-trimble-blue from "./styles/layout.css";
+    composes: a-text-color-trimble-blue from "./styles/colors.css";
 }

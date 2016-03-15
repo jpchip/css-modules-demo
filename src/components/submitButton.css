@@ -1,26 +1,27 @@
-
 .normal {
-  composes: common from "../styles/buttons.css";
+    composes: common from "../styles/buttons.css";
 }
+
 .disabled {
-  composes: common from "../styles/buttons.css";
-  color: #ccc;
+    composes: common from "../styles/buttons.css";
+    composes: a-text-color-grey from "../styles/colors.css";
 }
 .disabled:hover {
-  background: #3498db;
-	background-image: -webkit-linear-gradient(top, #3498db, #2980b9);
-	background-image: -moz-linear-gradient(top, #3498db, #2980b9);
-	background-image: -ms-linear-gradient(top, #3498db, #2980b9);
-	background-image: -o-linear-gradient(top, #3498db, #2980b9);
-	background-image: linear-gradient(to bottom, #3498db, #2980b9);
-  text-decoration: none;
+    background: #3498db;
+    background-image: -webkit-linear-gradient(top, #3498db, #2980b9);
+    background-image: -moz-linear-gradient(top, #3498db, #2980b9);
+    background-image: -ms-linear-gradient(top, #3498db, #2980b9);
+    background-image: -o-linear-gradient(top, #3498db, #2980b9);
+    background-image: linear-gradient(to bottom, #3498db, #2980b9);
+    text-decoration: none;
 }
 
 .error {
-  composes: common from "../styles/buttons.css";
-  color: #FF0000;
+    composes: common from "../styles/buttons.css";
+    composes: a-text-color-red from "../styles/colors.css";
 }
+
 .inProgress {
-  composes: common from "../styles/buttons.css";
-  color: #00FF00;
+    composes: common from "../styles/buttons.css";
+    composes: a-text-color-green from "../styles/colors.css";
 }
